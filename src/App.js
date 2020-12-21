@@ -1,8 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const App = props => {
   const [state, setState] = useState(props)
   const { name, price } = state
+
+  useEffect(() => {
+    console.log('DidMount')
+  }, [])
+
+  useEffect(() => {
+    console.log('only name')
+  }, [name])
   
   return (
     <>
